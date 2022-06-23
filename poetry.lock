@@ -1,8 +1,20 @@
-package = []
+[[package]]
+name = "mymodule"
+version = "0.0.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "directory"
+url = "mymodule"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ce2aa767160f871dd3652615ba0a0dceb7733d62eb8cb4665b87f30a562e3adf"
+content-hash = "583bcc7a552f90145243a9c14ce9b180289fd8198af005eaeaae71b244355262"
 
 [metadata.files]
+mymodule = []

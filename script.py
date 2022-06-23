@@ -1,3 +1,3 @@
-from my_module.functions import print_hello
+from mymodule.functions import print_hello
 
 print_hello()
