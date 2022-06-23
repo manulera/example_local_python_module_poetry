@@ -15,7 +15,25 @@ Instructions:
     * Add an empty `__init__.py` file
     * Add the scripts with your code (here `functions.py`)
 
-Then, `poetry install mymodule`.
+The file structure should look like this:
+
+```
+mymodule/
+├── mymodule
+│   ├── __init__.py
+│   └── functions.py
+└── setup.py
+```
+
+Now there are two options:
+  * If you want changes to `mymodule` to be available immediately:
+    * Go to `pyproject.toml` and add the following:
+        ```toml
+        [tool.poetry.dependencies]
+        mymodule = {path = "mymodule", develop = true}
+        ```
+    * Then run `poetry install`
+  * Otherwise, you can run `poetry add ./mymodule`, but every time you make a change you will have to run `poetry add ./mymodule` again. Note the `./` to specify that it's a local module.
 
 Now you can use it from any folder, and whenever someone downloads the repo, it will be installed when they call `poetry install`.
 

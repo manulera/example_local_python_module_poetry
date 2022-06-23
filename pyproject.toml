@@ -1,15 +1,15 @@
 [tool.poetry]
+authors = ["Manuel Lera Ramirez <manulera14@gmail.com>"]
+description = ""
 name = "example_local_python_module"
 version = "0.1.0"
-description = ""
-authors = ["Manuel Lera Ramirez <manulera14@gmail.com>"]
 
 [tool.poetry.dependencies]
+mymodule = {path = "mymodule", develop = true}
 python = "^3.9"
-mymodule = {path = "mymodule"}
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
