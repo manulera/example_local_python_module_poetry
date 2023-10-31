@@ -1,3 +1,7 @@
+# Coloured text
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
 # In case it's still there
 rm -f poetry.lock
 rm -rf .venv
@@ -6,7 +10,7 @@ rm -rf .venv
 poetry install
 
 # Run script (poetry install)
-echo "Running script with poetry install"
+echo "${GREEN}Running script with poetry install${NC}"
 poetry run python script.py
 
 # Remove local depencency
@@ -18,5 +22,5 @@ poetry run pip install -e .
 
 # Run script (pip install)
 cd ..
-echo "Running script with pip install"
+echo "${GREEN}Running script with pip install${NC}"
 poetry run python script.py
