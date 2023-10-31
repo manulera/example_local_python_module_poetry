@@ -18,6 +18,6 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
-          version: 1.6
+          version: 1.6.1
       - name: Reproduce error
         run: sh reproduce.sh
