@@ -14,7 +14,7 @@ poetry remove mymodule
 
 # Install with pip as editable
 cd mymodule
-pip install -e .
+poetry run pip install -e .
 
 # Run script (pip install)
 cd ..
