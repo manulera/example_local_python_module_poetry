@@ -5,7 +5,7 @@ name = "example_local_python_module"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
-mymodule = {path = "mymodule", develop = true}
+mymodule = { path = "mymodule", develop = true }
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
