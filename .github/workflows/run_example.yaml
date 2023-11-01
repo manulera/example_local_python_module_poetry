@@ -20,4 +20,7 @@ jobs:
           installer-parallel: true
           version: 1.6.1
       - name: Reproduce error
-        run: sh reproduce.sh
+        run: |
+          sh reproduce.sh
+          python -c 'from mymodule.mymodule.functions import print_hello; print_hello()'
+
