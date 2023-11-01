@@ -1,4 +1,4 @@
-name: Pip only test
+name: New poetry
 on: workflow_dispatch
 jobs:
   test:
