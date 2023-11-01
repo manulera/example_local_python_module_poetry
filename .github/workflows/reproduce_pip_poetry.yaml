@@ -1,0 +1,31 @@
+name: Pip from poetry
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+          version: 1.6.1
+      - name: Reproduce error
+        run: |
+          mv pyproject2.toml pyproject.toml
+          pip --version
+          cd mymodule
+          pip install -e .
+          cd ..
+          python -c 'from mymodule.functions import print_hello; print_hello()'
+          python -c 'from mymodule.mymodule.functions import print_hello; print_hello()'
+
