@@ -20,4 +20,4 @@ jobs:
           pip install -e .
           cd ..
           python -c 'from mymodule.functions import print_hello; print_hello()'
-          python -c 'from mymodule.mymodule.functions import print_hello; print_hello()'
+          python example_pip.py
