@@ -1,0 +1,22 @@
+name: New poetry
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Reproduce pip behaviour
+        run: |
+          pip install --upgrade pip
+          pip --version
+          cd mymodule
+          pip install -e .
+          cd ..
+          python -c 'from mymodule.mymodule.functions import print_hello; print_hello()'
